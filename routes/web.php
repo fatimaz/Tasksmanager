@@ -3,6 +3,8 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\TaskController;
+use App\Http\Controllers\DashboardController;
+
 use Illuminate\Support\Facades\Route;
 
 
@@ -21,9 +23,12 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::middleware('auth')->group(function () {
-    Route::get('/', function () {
-        return view('dashboard.index');
-    })->name('dashboard');
+
+    ######################################Dashboard Routes############################################
+    Route::get('/', [DashboardController::class,'index'])->name('dashboard');
+    Route::get('/completed_tasks', [DashboardController::class, 'showTasksCompleted'])->name('tasks.completed');
+    Route::get('/inProgress_tasks', [DashboardController::class, 'showTasksInProgress'])->name('tasks.inprogress');
+    Route::get('/users_inprogress', [DashboardController::class, 'showUsersInProgressTasks'])->name('users.tasks.inprogress');
 
     ######################################User Routes############################################
     Route::resource('users', UserController::class);
@@ -39,6 +44,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/completed_tasks', [DashboardController::class, 'showTasksCompleted'])->name('tasks.completed');
     Route::get('/inProgress_tasks', [DashboardController::class, 'showTasksInProgress'])->name('tasks.inprogress');
     Route::get('/users_inprogress', [DashboardController::class, 'showUsersInProgressTasks'])->name('users.tasks.inprogress');
+
+    
 });
 
 

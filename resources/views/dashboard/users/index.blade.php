@@ -7,12 +7,22 @@
 
             <div class="card">
                 <div class="card-header d-flex justify-content-between align-items-center">
-                    
+                 
                     <h4 class="mb-0">
-                        Users     
+                        Users
+                        @if(isset($title))
+                        {{ $title }}
+                     @endif    
+                        
                      </h4>
+                     @if(isset($title))
+                         <!-- If user or title exists, show the Back button -->
+                         <a href="{{ route('dashboard') }}" class="btn btn-primary">Back</a>
+                     @else
                          <!-- If user or title does not exist, show the Add Task button -->
                          <a href="{{ route('users.create') }}" class="btn btn-primary">Add Task</a>
+                    @endisset
+
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
