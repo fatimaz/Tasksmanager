@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Task;
 use App\Models\User;
+use Carbon\Carbon;
 
 class DashboardController extends Controller
 {
@@ -19,6 +20,12 @@ class DashboardController extends Controller
             $query->where('status', 0);
         })->count();
 
+        // $data['tasks'] = Task::where('due_date', '>=', Carbon::today())
+        //      ->where('due_date', '<=', Carbon::today()->addMonths(3))
+        //      ->get();
+
+        $data['tasks'] = Task::where('due_date', '<', Carbon::now())
+        ->where('status', 0)->orderBy('created_at', 'desc')->paginate(5);
         return view('dashboard.index',$data);
     }
 

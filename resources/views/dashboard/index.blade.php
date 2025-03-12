@@ -70,5 +70,70 @@
             </div>
         </div>
 
+        <div class="row mt-2">
+            <div class="col-md-12 mb-30 mt-4">
+                <h4>Overdue Tasks</h4>
+
+        <div class="span5 mt-3">
+            <table class="table table-striped table-condensed">
+                  <thead>
+            
+                  <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Due Date</th>
+                    <th>Responsible user</th>
+                    <th>Status</th>  
+                    <th>Action</th>                                         
+                  </tr>
+              </thead>   
+              <tbody>
+                @isset($tasks)
+                @foreach($tasks as $task)
+                <tr>
+                    <td>{{ $task->id }}</td>
+                    <td>{{ $task->name }}</td>
+                    <td>{{ $task->description }}</td>
+                     <td>{{ $task->due_date ? $task->due_date->format('Y-m-d') : 'No Due Date' }}</td>
+                    <td>{{ $task->user->name }}</td>
+                    <td>
+                        @if ($task->getStatus() == 'in-progress')
+                            <span class="btn btn-warning btn-sm">In Progress</span>
+                        @else
+                            <span class="btn btn-success btn-sm">Completed</span>
+                        @endif      
+                    </td>    
+                    <td>
+                        <div class="dropdown show">
+                            <a class="btn btn-primary btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Action
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" href="{{ route('tasks.edit', $task->id) }}">
+                                    <i style="color: blue" class="fa fa-edit"></i>&nbsp;Edit
+                                </a>
+                                <a class="dropdown-item" data-bs-target="#Delete_Task{{ $task->id }}" data-bs-toggle="modal" href="##Delete_Task{{ $task->id }}">
+                                    <i style="color: red" class="fa fa-trash"></i>&nbsp;Delete
+                                </a>
+                                <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#update_status{{ $task->id }}">
+                                    <i style="color: orange" class="fa fa-spinner fa-spin"></i>&nbsp;Change status
+                                </a>
+                            </div>
+                        </div>      
+                    </td>
+                    @include('dashboard.tasks.delete') 
+                    @include('dashboard.tasks.update_status')                                 
+                </tr>
+                @endforeach   
+                @endisset                               
+              </tbody>
+            </table>
+            </div>
+            </div>
+        </div>
+        <div class="mt-3 d-flex justify-content-center">
+            {{ $tasks->links('pagination::bootstrap-5') }}
+        </div>
     </div>
 @endsection
