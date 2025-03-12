@@ -1,0 +1,207 @@
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Adjust space between logo and text */
+    padding: 5px 0;
+}
+
+.logo svg {
+    width: 60px; /* Adjust logo size */
+    height: auto;
+}
+
+.logo-text {
+    color: #3cb6ce;
+    font-weight: bold;
+    font-size: 26px;
+    margin: 0;
+}
+
+/* Add space between navbar items */
+.navbar-nav {
+    margin-left: 20px; /* Add left margin to create space */
+}
+
+/* Remove the automatic margin pushing the items to the right */
+.ms-auto {
+    margin-left: 0 !important;
+
+}
+
+.main-content {
+    min-height: 100vh; /* Ensure it takes full height */
+    padding-bottom: 50px; /* Prevent content from overlapping footer */
+}
+
+.content-div {
+   margin-top: 100px;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-y: auto; /* Enable vertical scrolling */
+    background-color: #f8f9fa; /* Light background for better UI */
+}
+
+    .header {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .header img {
+        height: 50px;
+    }
+     /* Responsive table */
+.table-responsive {
+    max-height: 600px; /* Avoid full page overflow */
+    overflow-y: auto;
+}
+
+/* Profile sidebar with shadow */
+.profile-sidebar {
+padding: 20px 0 10px 0;
+background: #fff;
+box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Adds shadow */
+border-radius: 10px; /* Optional: Adds rounded corners */
+}
+
+
+/* Profile container */
+.profile {
+  margin: 20px 0;
+}
+
+/* Profile sidebar */
+
+.profile-userpic img {
+  float: none;
+  margin: 0 auto;
+  width: 50%;
+  height: 50%;
+  border-radius: 50% !important;
+}
+
+.profile-usertitle {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.profile-usertitle-name {
+  color: #5a7391;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.profile-usertitle-job {
+  text-transform: uppercase;
+  color: #5b9bd1;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.profile-userbuttons {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.profile-userbuttons .btn {
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 15px;
+  margin-right: 5px;
+}
+
+.profile-usermenu {
+  margin-top: 30px;
+}
+
+.profile-usermenu ul li {
+  border-bottom: 1px solid #f0f4f7;
+}
+
+.profile-usermenu ul li:last-child {
+  border-bottom: none;
+}
+
+.profile-usermenu ul li a {
+  color: #93a3b5;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+}
+
+.profile-usermenu ul li a i {
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+.profile-usermenu ul li a:hover {
+  background-color: #fafcfd;
+  color: #5b9bd1;
+}
+
+.profile-usermenu ul li.active a {
+  color: #5b9bd1;
+  background-color: #f6f9fb;
+  border-left: 2px solid #5b9bd1;
+  margin-left: -2px;
+}
+
+/* Profile Content */
+.profile-content {
+  padding: 20px;
+  background: #fff;
+  min-height: 460px;
+}
+.card-statistics {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.card-statistics .card-body {
+  padding: 20px;
+}
+
+.card-statistics .card-text {
+  font-weight: bold;
+}
+
+.table th, .table td {
+  text-align: center;
+}
+
+.table th {
+  background-color: #f8f9fa;
+}
+
+.table-striped tbody tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+.card {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.text-danger {
+  color: red !important;
+}
+
+.profile-sidebar {
+  margin-top: 30px;
+}
+
+.profile-sidebar h5 {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.card .float-right {
+  padding-top: 5px;
+}
