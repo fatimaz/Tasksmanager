@@ -74,8 +74,7 @@
                                                     <i style="color: orange" class="fa fa-spinner fa-spin"></i>&nbsp;Change status
                                                 </a>
                                             </div>
-                                        </div>
-                                        
+                                        </div>      
                                     </td>
                                     @include('dashboard.tasks.delete') 
                                     @include('dashboard.tasks.update_status')
