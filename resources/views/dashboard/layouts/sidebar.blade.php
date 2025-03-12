@@ -32,7 +32,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="{{route('tasks.index')}}">
                         <i class="fa fa-check"></i>
                         Tasks
                     </a>

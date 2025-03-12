@@ -5,12 +5,12 @@
                 <div class="container-fluid d-flex align-items-center justify-content-between">
                     <!-- Logo Section -->
                     <div class="logo">
-                        <span class="logo-text">Task Management</span>
+                            <a href="{{ route('dashboard') }}" class="btn  me-2">
+                        <span class="logo-text">Task Management</span></a>
                     </div>
     
                 </div>
                 
-                    {{-- <div class="collapse navbar-collapse justify-content-end" id="navbarNav"> --}}
                         @auth  {{-- If the user is logged in --}}
                        <!-- Header Links -->
                             <div class="dropdown">
@@ -33,7 +33,6 @@
                                 <a href="{{ route('register') }}" class="btn btn-primary">Register</a>
                             </div>
                         @endauth
-                    {{-- </div> --}}
           
             </nav>
         </header>

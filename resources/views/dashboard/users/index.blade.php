@@ -34,7 +34,7 @@
                                     <td>{{ $user->email }}</td>       
                                     <td>
                                             <div class="dropdown show">
-                                                <a class="btn btn-success btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                 <a class="btn btn-primary btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                     Action
                                                 </a>
                                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">

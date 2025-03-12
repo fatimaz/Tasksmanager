@@ -1,7 +1,7 @@
 @extends('dashboard.layouts.master2')
 
 @section('content')
-<div class="container">
+
 <div class="row justify-content-center mt-5">
     <div class="col-lg-6">
         <div class="card">
@@ -54,7 +54,4 @@
         </div>
     </div>
 </div>
-</div>
-
-
 @endsection

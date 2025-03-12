@@ -7,9 +7,7 @@
     @include('dashboard.layouts.header')
     <div class="container">
         <div class="content-div">
-                <div class="row">
                         @yield('content')
-                </div>
         </div>
     </div>
     <!-- Include the js footer section -->

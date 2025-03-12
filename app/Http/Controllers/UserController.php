@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
 use App\Http\Requests\UpdatePasswordRequest;
+use Illuminate\Support\Facades\Auth;
+
 
 
 
@@ -18,7 +20,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::orderBy('created_at', 'desc')->paginate(5);
+        $users = User::where('id', '!=', Auth::id())->orderBy('created_at', 'desc')->paginate(5);
         return view('dashboard.users.index', compact('users'));
     }
 
